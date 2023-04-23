@@ -53,4 +53,10 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 10px !important;
+}
+
+.product > img {
+  max-height: 300px;
+  max-width: 300px;
 }
