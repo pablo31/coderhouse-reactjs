@@ -56,7 +56,7 @@ nav {
   padding: 10px !important;
 }
 
-.product > img {
+.product img {
   max-height: 300px;
   max-width: 300px;
 }

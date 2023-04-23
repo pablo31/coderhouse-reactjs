@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar() {
@@ -11,10 +12,9 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Mercadito</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Contacto</a>
+                        <Link className="nav-link" to="/">
+                            Mercadito
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link disabled" href="#cart"><CartWidget/></a>

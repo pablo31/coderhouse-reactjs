@@ -1,15 +1,18 @@
 import Item from './Item'
 
 function ItemList(props) {
+    let category = props.category
+    let title = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
     let items = []
     for(let i = 0; i < props.products.length; i++) {
-        let products = props.products[i]
-        let name = products[0]
-        let src = products[1]
-        let price = products[2]
+        let product = props.products[i]
+        let id = product[0]
+        let name = product[1]
+        let src = product[2]
+        let price = product[3]
         items.push(
-            <div className="col">
-                <Item category={props.category} name={name} src={src} price={price}/>
+            <div key={id} className="col">
+                <Item id={id} category={category} name={name} src={src} price={price}/>
             </div>
         )
     }
@@ -17,7 +20,7 @@ function ItemList(props) {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1>{props.category}</h1>
+                    <h1>{title}</h1>
                 </div>
             </div>
             <div className="row">
