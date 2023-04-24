@@ -16,7 +16,8 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route exact path="/" element={<ItemListContainer greeting="Catálogo de productos"/>} />
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/products/:category" element={<ItemListContainer />} />
           <Route exact path="/products/:category/:id" element={<Product />} />
         </Routes>
       </div>
