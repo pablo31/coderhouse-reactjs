@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap-icons/font/bootstrap-icons.css"
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import CartListContainer from './components/cart/CartListContainer'
 import Product from './components/Product'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './contexts/CartContext'
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/" element={<ItemListContainer />} />
             <Route exact path="/products/:category" element={<ItemListContainer />} />
             <Route exact path="/products/:category/:id" element={<Product />} />
+            <Route exact path="/cart" element={<CartListContainer />} />
           </Routes>
         </div>
       </BrowserRouter>

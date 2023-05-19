@@ -16,33 +16,35 @@ export const CartContextProvider = ({children})=> {
         return quantities[product.id] || 0
     }
 
-    const addToCart = (newProduct) => {
-        setProducts([...products, newProduct])
-        let newQuantities = { ...quantities }
-        newQuantities[newProduct.id] = 1
-        setQuantities(newQuantities)
-    }
-
-    const removeFromCart = (product) => {
-        let remainingProducts = products.filter((e) => e.id = product.id)
-        setProducts(remainingProducts)
-        let newQuantities = { ...quantities }
-        delete newQuantities[product.id]
-        setQuantities(newQuantities)
+    const removeOneFromCart = (product) => {
+        if(quantityFor(product) == 1) {
+            let remainingProducts = products.filter((e) => e.id != product.id)
+            setProducts(remainingProducts)
+            let newQuantities = { ...quantities }
+            delete newQuantities[product.id]
+            setQuantities(newQuantities)
+            return 0
+        } else {
+            let newQuantities = { ...quantities }
+            newQuantities[product.id]--
+            setQuantities(newQuantities)
+            return newQuantities[product.id]
+        }
     }
 
     const addOneToCart = (product) => {
-        let newQuantities = { ...quantities }
-        newQuantities[product.id]++
-        setQuantities(newQuantities)
-        return newQuantities[product.id]
-    }
-
-    const removeOneFromCart = (product) => {
-        let newQuantities = { ...quantities }
-        newQuantities[product.id]--
-        setQuantities(newQuantities)
-        return newQuantities[product.id]
+        if(quantityFor(product) > 0) {
+            let newQuantities = { ...quantities }
+            newQuantities[product.id]++
+            setQuantities(newQuantities)
+            return newQuantities[product.id]
+        } else {
+            setProducts([...products, product])
+            let newQuantities = { ...quantities }
+            newQuantities[product.id] = 1
+            setQuantities(newQuantities)
+            return 1
+        }
     }
 
     const clearCart = () => {
@@ -68,13 +70,16 @@ export const CartContextProvider = ({children})=> {
         return result
     }
 
+    const getProducts = () => {
+        return products
+    }
+
     return (
        <CartContext.Provider value={{
             products, quantities,
             isOnCart, quantityFor,
-            addToCart, removeFromCart,
             addOneToCart, removeOneFromCart,
-            clearCart,
+            getProducts, clearCart,
             total, productsQuantity
        }}>
             {children}
