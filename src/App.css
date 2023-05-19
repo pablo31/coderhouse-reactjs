@@ -40,8 +40,8 @@
   color: #888;
 }
 
-.cart {
-  color:red;
+.cart * {
+  color:red !important;
 }
 
 .cart > svg {
