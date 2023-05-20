@@ -1,7 +1,8 @@
-import ItemList from "./ItemList"
-import Mocks from '../mocks'
+import ItemList from "../ItemList"
+import Mocks from '../../mocks'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import Item from '../Item'
 
 function ItemListContainer(props) {
     const { category } = useParams()
@@ -18,7 +19,7 @@ function ItemListContainer(props) {
         </div>
     ) : (
         <div>
-            <ItemList products={products}/>
+            <ItemList itemClass={Item} products={products}/>
         </div>
     )
 }

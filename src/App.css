@@ -60,3 +60,8 @@ nav {
   max-height: 300px;
   max-width: 300px;
 }
+
+.small-product img {
+  max-height: 100px;
+  max-width: 100px;
+}

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import Mocks from '../mocks'
+import Mocks from '../../mocks'
 import { useState, useEffect } from 'react'
 
 function Product(props) {

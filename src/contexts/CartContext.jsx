@@ -7,6 +7,7 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({children})=> {
     const [products, setProducts] = useState([])
     const [quantities, setQuantities] = useState({})
+    const [checkoutDetails, setCheckoutDetails] = useState({})
 
     const isOnCart = (product) => {
         return !!quantities[product.id]
@@ -55,7 +56,7 @@ export const CartContextProvider = ({children})=> {
     const total = () => {
         let result = 0
         for(const id in quantities) {
-            let product = products.find((e) => e.id === k)
+            let product = products.find((e) => e.id == id)
             let price = product.price * quantities[id]
             result += price
         }
@@ -74,13 +75,25 @@ export const CartContextProvider = ({children})=> {
         return products
     }
 
+    const updateCheckoutDetail = (field, value) => {
+        let newDetails = { ...checkoutDetails }
+        newDetails[field] = value
+        setCheckoutDetails(newDetails)
+        return field
+    }
+
+    const getCheckoutDetails = () => {
+        return checkoutDetails
+    }
+
     return (
        <CartContext.Provider value={{
             products, quantities,
             isOnCart, quantityFor,
             addOneToCart, removeOneFromCart,
             getProducts, clearCart,
-            total, productsQuantity
+            total, productsQuantity,
+            updateCheckoutDetail, getCheckoutDetails
        }}>
             {children}
        </CartContext.Provider>

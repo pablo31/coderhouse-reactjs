@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom"
-import ItemQuantity from "./ItemQuantity"
+import ItemQuantity from "../ItemQuantity"
 
-function Item(props) {
+function ItemSummary(props) {
     let product = props.product
 
     return (
-        <div className="row product">
+        <div className="row small-product">
             <div className="col">
                 <NavLink to={`/products/${product.category}/${product.id}`}>
                     <img className="d-block img-thumbnail" src={product.src} alt=""/>
@@ -17,15 +17,10 @@ function Item(props) {
                 </NavLink>
             </div>
             <div className="col">
-                <NavLink to={`/products/${product.category}/${product.id}`}>
-                    <span>${product.price}</span>
-                </NavLink>
-            </div>
-            <div className="col">
-                <ItemQuantity product={product} />
+                <ItemQuantity product={product} viewOnly="true" />
             </div>
         </div>
     )
 }
 
-export default Item
+export default ItemSummary
