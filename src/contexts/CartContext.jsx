@@ -86,6 +86,10 @@ export const CartContextProvider = ({children})=> {
         return checkoutDetails
     }
 
+    const getCheckoutDetail = (field) => {
+        return checkoutDetails[field]
+    }
+
     return (
        <CartContext.Provider value={{
             products, quantities,
@@ -93,7 +97,8 @@ export const CartContextProvider = ({children})=> {
             addOneToCart, removeOneFromCart,
             getProducts, clearCart,
             total, productsQuantity,
-            updateCheckoutDetail, getCheckoutDetails
+            updateCheckoutDetail, getCheckoutDetails,
+            getCheckoutDetail
        }}>
             {children}
        </CartContext.Provider>

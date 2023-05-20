@@ -29,7 +29,7 @@ function Checkout() {
 
     const validateField = (details, field) => {
         const value = details[field]
-        return value.length != 0 && value != ""
+        return value && value.length != 0 && value != ""
     }
 
     return (

@@ -9,8 +9,11 @@ function CartListContainer() {
     if (cart.productsQuantity() > 0) {
         return (
             <div>
+                <Link to="/cart/checkout">
+                    Seguir al checkout {">"}
+                </Link>
                 <ItemList itemClass={Item} products={cart.getProducts()}/>
-                <Link className="navbar-brand" to="/cart/checkout">
+                <Link to="/cart/checkout">
                     Seguir al checkout {">"}
                 </Link>
             </div>
@@ -25,7 +28,7 @@ function CartListContainer() {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Link className="navbar-brand" to="/">
+                        <Link to="/">
                             Volver al catálogo
                         </Link>
                     </div>

@@ -31,28 +31,35 @@ function Brief() {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
-                    <div className="row">
-                        <div className="col">
-                        </div>
-                        <div className="col">
-                        </div>
-                        <div className="col">
-                            Total ${cart.total()}
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    {list}
+                    Resumen de su compra
                 </div>
             </div>
             <div className="row">
                 <div className="col">
+                    <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
                 </div>
                 <div className="col">
-                    <Link className="navbar-brand" to="/cart" onClick={purchase}>
-                        Comprar!
-                    </Link>
+                    {list}
+                    <div className="row">
+                        <div className="col">
+                            <b>Total</b>
+                        </div>
+                        <div className="col">
+                            <b>${cart.total()}</b>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <Link to="/cart/checkout">
+                                Editar datos
+                            </Link>
+                        </div>
+                        <div className="col">
+                            <Link to="/cart" onClick={purchase}>
+                                Comprar!
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
