@@ -77,7 +77,7 @@ export const CartContextProvider = ({children})=> {
 
     const updateCheckoutDetail = (field, value) => {
         let newDetails = { ...checkoutDetails }
-        newDetails[field] = value
+        newDetails[field] = value.trim()
         setCheckoutDetails(newDetails)
         return field
     }

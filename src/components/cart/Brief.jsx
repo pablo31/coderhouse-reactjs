@@ -1,6 +1,7 @@
 import ItemList from "../ItemList"
 import { useCartContext } from '../../contexts/CartContext'
 import ItemSummary from "./ItemSummary"
+import { Link } from 'react-router-dom';
 
 function Brief() {
     const cart = useCartContext()
@@ -14,6 +15,15 @@ function Brief() {
                 <div className="col">{field}</div>
                 <div className="col">{value}</div>
             </div>
+        )
+    }
+
+    const purchase = () => {
+        cart.clearCart()
+        Swal.fire(
+            'Compra exitosa',
+            'Un asesor se contactará para realizar el cobro y envio de los productos',
+            'success'
         )
     }
 
@@ -40,7 +50,9 @@ function Brief() {
                 <div className="col">
                 </div>
                 <div className="col">
-                    <button>Comprar!</button>
+                    <Link className="navbar-brand" to="/cart" onClick={purchase}>
+                        Comprar!
+                    </Link>
                 </div>
             </div>
         </div>

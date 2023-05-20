@@ -9,7 +9,22 @@ function ItemQuantity(props) {
         cart.addOneToCart(product)
     }
     const removeOneFromCart = () => {
-        cart.removeOneFromCart(product)
+        if (quantity == 1) {
+            Swal.fire({
+                title: "Seguro que desea quitar el producto del carrito?",
+                showDenyButton: false,
+                showCancelButton: true,
+                confirmButtonText: "Si, quitar",
+                cancelButtonText: "Cancelar"
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    cart.removeOneFromCart(product)
+                }
+              })
+        } else {
+            cart.removeOneFromCart(product)
+        }
     }
 
     const quantity = cart.quantityFor(product)
