@@ -28,6 +28,11 @@ function NavBar() {
                             Pelotas
                         </NavLink>
                     </li>
+                    <li className="nav-item active">
+                        <NavLink className="nav-link" to={`/products/Accesorios`}>
+                            Accesorios
+                        </NavLink>
+                    </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to={`/cart`}>
                             <CartWidget />

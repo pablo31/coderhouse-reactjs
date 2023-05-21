@@ -5,7 +5,8 @@ let products = [
     { id: 1, category: "Paletas", name: "Paleta Wilson", src: "/src/assets/paletas/wilson-1.jpeg", price: 52000 },
     { id: 2, category: "Paletas", name: "Paleta Head", src: "/src/assets/paletas/head-1.jpeg", price: 43500 },
     { id: 3, category: "Paletas", name: "Paleta Babolat", src: "/src/assets/paletas/babolat-1.jpeg", price: 52300 },
-    { id: 4, category: "Paletas", name: "Paleta Royal", src: "/src/assets/paletas/royal-1.jpeg", price: 44000 }
+    { id: 4, category: "Paletas", name: "Paleta Royal", src: "/src/assets/paletas/royal-1.jpeg", price: 44000 },
+    { id: 5, category: "Accesorios", name: "Muñequera Babolat", src: "/src/assets/accesorios/munequera-1.jpeg", price: 7000 }
 ]
 
 export default {
