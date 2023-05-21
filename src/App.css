@@ -56,12 +56,45 @@ nav {
   padding: 10px !important;
 }
 
+.product {
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.product a {
+  color: black;
+}
+
+.product .pricing {
+  text-align: center;
+}
+
+.product .pricing .quantity {
+  padding-left: 10px;
+  padding-right: 10px;
+  display:block;
+}
+
 .product img {
-  max-height: 300px;
-  max-width: 300px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .small-product img {
   max-height: 100px;
   max-width: 100px;
+}
+
+.wizard-continue {
+  margin: 20px;
+}
+
+.checkout .input-field {
+  padding: 10px;
+}
+
+.brief div {
+  padding: 5px;
 }

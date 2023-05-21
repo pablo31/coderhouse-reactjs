@@ -8,7 +8,7 @@ function InputField(props) {
     }
 
     return (
-        <div className="row">
+        <div className="row input-field">
             <div className="col">
                 <span>{ props.title }</span>
             </div>

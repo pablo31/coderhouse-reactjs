@@ -7,9 +7,9 @@ function ItemList(props) {
         )
     }
     return (
-        <div className="container">
+        <table className="table table-bordered">
             {items}
-        </div>
+        </table>
     )
 }
 

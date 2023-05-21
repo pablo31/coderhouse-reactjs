@@ -37,19 +37,19 @@ function ItemQuantity(props) {
     } else if (quantity > 0) {
         return (
             <div>
-                <button onClick={removeOneFromCart}>
-                    -
-                </button>
-                <span>{ quantity }</span>
-                <button onClick={addOneToCart}>
+                <button className="btn btn-success" onClick={addOneToCart}>
                     +
+                </button>
+                <span className="quantity">{ quantity }</span>
+                <button className="btn btn-danger" onClick={removeOneFromCart}>
+                    -
                 </button>
             </div>
         )
     } else {
         return (
             <div>
-                <button onClick={addOneToCart}>
+                <button className="btn btn-primary" onClick={addOneToCart}>
                     Agregar al carrito
                 </button>
             </div>

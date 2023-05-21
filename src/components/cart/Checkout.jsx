@@ -33,7 +33,12 @@ function Checkout() {
     }
 
     return (
-        <div className="container">
+        <div className="checkout container">
+            <div className="row input-field">
+                <div className="col">
+                    A continuación, por favor, coloque sus datos para proseguir con el proceso de compra.
+                </div>
+            </div>
             <InputField title="Nombre" placeholder="Pablo" type="text" onChange={updateCheckoutDetail} />
             <InputField title="Apellido" placeholder="Fernandez" type="text" onChange={updateCheckoutDetail} />
             <InputField title="Direccion" placeholder="Bacacay 1234" type="text" onChange={updateCheckoutDetail} />
@@ -43,7 +48,7 @@ function Checkout() {
                 <div className="col">
                 </div>
                 <div className="col">
-                    <Link className="navbar-brand" to="/cart/checkout/brief" onClick={validate}>
+                    <Link className="btn btn-primary wizard-continue" to="/cart/checkout/brief" onClick={validate}>
                         Seguir al resumen y comprar {">"}
                     </Link>
                 </div>

@@ -9,11 +9,11 @@ function CartListContainer() {
     if (cart.productsQuantity() > 0) {
         return (
             <div>
-                <Link to="/cart/checkout">
+                <Link className="btn btn-primary wizard-continue" to="/cart/checkout">
                     Seguir al checkout {">"}
                 </Link>
                 <ItemList itemClass={Item} products={cart.getProducts()}/>
-                <Link to="/cart/checkout">
+                <Link className="btn btn-primary wizard-continue" to="/cart/checkout">
                     Seguir al checkout {">"}
                 </Link>
             </div>

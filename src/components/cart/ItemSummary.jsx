@@ -5,21 +5,21 @@ function ItemSummary(props) {
     let product = props.product
 
     return (
-        <div className="row small-product">
-            <div className="col">
+        <tr className="product small-product">
+            <td>
                 <NavLink to={`/products/${product.category}/${product.id}`}>
                     <img className="d-block img-thumbnail" src={product.src} alt=""/>
                 </NavLink>
-            </div>
-            <div className="col">
+            </td>
+            <td>
                 <NavLink to={`/products/${product.category}/${product.id}`}>
                     <span>{product.name}</span>
                 </NavLink>
-            </div>
-            <div className="col">
+            </td>
+            <td>
                 <ItemQuantity product={product} viewOnly="true" />
-            </div>
-        </div>
+            </td>
+        </tr>
     )
 }
 

@@ -11,10 +11,10 @@ function Brief() {
     for(const field in checkoutDetails) {
         const value = checkoutDetails[field]
         list.push(
-            <div key={field} className="row">
-                <div className="col">{field}</div>
-                <div className="col">{value}</div>
-            </div>
+            <tr key={field}>
+                <td>{field}</td>
+                <td>{value}</td>
+            </tr>
         )
     }
 
@@ -28,7 +28,7 @@ function Brief() {
     }
 
     return (
-        <div className="container">
+        <div className="container brief">
             <div className="row">
                 <div className="col">
                     Resumen de su compra
@@ -36,10 +36,14 @@ function Brief() {
             </div>
             <div className="row">
                 <div className="col">
-                    <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
+                    <table className="table table-bordered">
+                        <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
+                    </table>
                 </div>
                 <div className="col">
-                    {list}
+                    <table className="table table-bordered">
+                        {list}
+                    </table>
                     <div className="row">
                         <div className="col">
                             <b>Total</b>
@@ -50,12 +54,12 @@ function Brief() {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <Link to="/cart/checkout">
+                            <Link className="btn btn-danger" to="/cart/checkout">
                                 Editar datos
                             </Link>
                         </div>
                         <div className="col">
-                            <Link to="/cart" onClick={purchase}>
+                            <Link className="btn btn-success" to="/cart" onClick={purchase}>
                                 Comprar!
                             </Link>
                         </div>
