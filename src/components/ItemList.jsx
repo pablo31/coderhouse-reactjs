@@ -8,7 +8,9 @@ function ItemList(props) {
     }
     return (
         <table className="table table-bordered">
-            {items}
+            <tbody>
+                {items}
+            </tbody>
         </table>
     )
 }

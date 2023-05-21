@@ -42,7 +42,9 @@ function Brief() {
                 </div>
                 <div className="col">
                     <table className="table table-bordered">
-                        {list}
+                        <tbody>
+                            {list}
+                        </tbody>
                     </table>
                     <div className="row">
                         <div className="col">
