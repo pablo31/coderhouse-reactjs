@@ -17,7 +17,6 @@ function ItemQuantity(props) {
                 confirmButtonText: "Si, quitar",
                 cancelButtonText: "Cancelar"
               }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     cart.removeOneFromCart(product)
                 }
