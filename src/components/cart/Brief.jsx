@@ -36,9 +36,7 @@ function Brief() {
             </div>
             <div className="row">
                 <div className="col">
-                    <table className="table table-bordered">
-                        <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
-                    </table>
+                    <ItemList itemClass={ItemSummary} products={cart.getProducts()} />
                 </div>
                 <div className="col">
                     <table className="table table-bordered">
