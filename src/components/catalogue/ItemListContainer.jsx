@@ -1,5 +1,5 @@
 import ItemList from "../ItemList"
-import Mocks from '../../mocks'
+import Products from '../../products'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import Item from '../Item'
@@ -9,7 +9,7 @@ function ItemListContainer(props) {
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        let fetch = category ? Mocks.fetchCategory(category) : Mocks.fetchProducts()
+        let fetch = category ? Products.fetchCategory(category) : Products.fetchProducts()
         fetch.then((response) => setProducts(response))
              .finally(() => setIsLoading(false))
     })

@@ -18,13 +18,19 @@ function Brief() {
         )
     }
 
-    const purchase = () => {
-        cart.clearCart()
-        Swal.fire(
-            'Compra exitosa',
-            'Un asesor se contactará para realizar el cobro y envio de los productos',
-            'success'
-        )
+    const purchase = (e) => {
+        console.log("hola!")
+        e.preventDefault()
+        return
+        cart.purchase().then((response) => {
+            const orderId = response.id
+            Swal.fire(
+                'Compra exitosa',
+                'Su número de orden es ' + orderId + '\n' +
+                'Un asesor se contactará para realizar el cobro y envio de los productos',
+                'success'
+            )
+        })
     }
 
     return (
@@ -59,9 +65,9 @@ function Brief() {
                             </Link>
                         </div>
                         <div className="col">
-                            <Link className="btn btn-success" to="/cart" onClick={purchase}>
+                            <a className="btn btn-success" onClick={purchase}>
                                 Comprar!
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

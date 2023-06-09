@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import Mocks from '../../mocks'
+import Products from '../../products'
 import { useState, useEffect } from 'react'
 import ItemQuantity from '../ItemQuantity'
 
@@ -8,7 +8,7 @@ function Product(props) {
     const [product, setProduct] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        Mocks.fetchProduct(id)
+        Products.fetchProduct(id)
              .then((response) => setProduct(response))
              .finally(() => setIsLoading(false))
     })
@@ -29,7 +29,7 @@ function Product(props) {
             </div>
             <div className="row">
                 <div className="col">
-                    <img className="d-block" src={product.src} alt=""/>
+                    <img className="d-block" src={"/src/assets/" + product.pic} alt=""/>
                 </div>
             </div>
             <div className="row">

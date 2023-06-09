@@ -8,7 +8,7 @@ function Item(props) {
         <tr className="product">
             <td>
                 <NavLink to={`/products/${product.category}/${product.id}`}>
-                    <img className="d-block img-thumbnail" src={product.src} alt=""/>
+                    <img className="d-block img-thumbnail" src={"/src/assets/" + product.pic} alt=""/>
                 </NavLink>
             </td>
             <td>

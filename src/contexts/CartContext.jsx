@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react"
+import Products from '../products'
 
 const CartContext = createContext([])
 
@@ -90,6 +91,10 @@ export const CartContextProvider = ({children})=> {
         return checkoutDetails[field]
     }
 
+    const purchase = () => {
+        return Products.putOrder(quantities, checkoutDetails)
+    }
+
     return (
        <CartContext.Provider value={{
             products, quantities,
@@ -98,7 +103,7 @@ export const CartContextProvider = ({children})=> {
             getProducts, clearCart,
             total, productsQuantity,
             updateCheckoutDetail, getCheckoutDetails,
-            getCheckoutDetail
+            getCheckoutDetail, purchase
        }}>
             {children}
        </CartContext.Provider>
