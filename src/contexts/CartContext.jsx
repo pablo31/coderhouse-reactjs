@@ -92,7 +92,7 @@ export const CartContextProvider = ({children})=> {
     }
 
     const purchase = () => {
-        return Products.putOrder(quantities, checkoutDetails)
+        return Products.putOrder(quantities, checkoutDetails, total())
     }
 
     return (

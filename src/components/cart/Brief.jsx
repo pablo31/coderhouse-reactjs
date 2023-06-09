@@ -1,11 +1,12 @@
 import ItemList from "../ItemList"
 import { useCartContext } from '../../contexts/CartContext'
 import ItemSummary from "./ItemSummary"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 
 function Brief() {
     const cart = useCartContext()
     const checkoutDetails = cart.getCheckoutDetails()
+    const navigate = useNavigate()
 
     let list = []
     for(const field in checkoutDetails) {
@@ -19,17 +20,18 @@ function Brief() {
     }
 
     const purchase = (e) => {
-        console.log("hola!")
         e.preventDefault()
-        return
         cart.purchase().then((response) => {
             const orderId = response.id
             Swal.fire(
                 'Compra exitosa',
-                'Su número de orden es ' + orderId + '\n' +
+                'Su código de orden es <b>' + orderId + '</b><br>' +
                 'Un asesor se contactará para realizar el cobro y envio de los productos',
                 'success'
-            )
+            ).then(() => {
+                cart.clearCart()
+                navigate('/')
+            })
         })
     }
 
