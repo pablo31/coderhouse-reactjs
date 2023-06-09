@@ -21,7 +21,7 @@ function Product(props) {
             </div>
         </div>
     ) : (
-        <div className="container">
+        <div className="container detailedView">
             <div className="row">
                 <div className="col">
                     <h1>{product.name}</h1>

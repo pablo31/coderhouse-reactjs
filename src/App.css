@@ -98,3 +98,13 @@ nav {
 .brief div {
   padding: 5px;
 }
+
+.detailedView {
+  text-align: center;
+}
+.detailedView img {
+  display: inline-block !important;
+}
+.detailedView * {
+  padding: 10px;
+}
